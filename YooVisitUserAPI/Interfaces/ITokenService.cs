@@ -1,9 +1,11 @@
 ﻿using YooVisitUserAPI.Models;
 
+namespace YooVisitUserAPI.Interfaces;
+
 public interface ITokenService
 {
     // Contrat pour générer un token.
     // Prend un utilisateur en entrée pour mettre ses infos (ID, rôle...) dans le token.
     // Renvoie le token (string) et sa date d'expiration.
-    (string token, DateTime expiration) GenerateJwtToken(User user);
+    (string token, DateTime expiration) GenerateJwtToken(UserApplication user);
 }

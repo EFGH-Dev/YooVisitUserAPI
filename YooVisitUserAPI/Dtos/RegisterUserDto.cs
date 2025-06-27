@@ -4,11 +4,6 @@ namespace YooVisitUserAPI.DTO
 {
     public class RegisterUserDto
     {
-        // On utilise les annotations pour la validation automatique !
-        [Required]
-        [StringLength(50)]
-        public string Nom { get; set; }
-
         [Required]
         [EmailAddress] // ASP.NET Core vérifie que c'est un format d'email valide.
         public string Email { get; set; }

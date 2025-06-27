@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using YooVisit.UserService.Services;
 using YooVisitUserAPI.DTO;
 using YooVisitUserAPI.Dtos;
+using YooVisitUserAPI.Interfaces;
+using YooVisitUserAPI.Services;
+
+namespace YooVisitUserAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")] // L'URL de base sera /api/users
@@ -35,14 +38,12 @@ public class UsersController : ControllerBase
         }
 
         // 2. Hacher le mot de passe. ON NE STOCKE JAMAIS UN MOT DE PASSE EN CLAIR !
-        // C'est comme écrire le code du coffre-fort sur la porte.
         string hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 
         // 3. Créer l'utilisateur (logique dans le _userService)
         var newUser = await _userService.CreateUserAsync(registerDto, hashedPassword);
 
         // 4. On retourne une réponse HTTP 201 Created avec les infos de l'utilisateur créé.
-        // On ne le connecte pas automatiquement ici, c'est un choix de design.
         return CreatedAtAction(nameof(GetUserById), new { id = newUser.IdUtilisateur }, newUser);
     }
 

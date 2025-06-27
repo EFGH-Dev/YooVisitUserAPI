@@ -1,15 +1,14 @@
-﻿using YooVisit.UserService.Dtos;
-using YooVisit.UserService.Models;
-using YooVisitUserAPI.DTO;
+﻿using YooVisitUserAPI.DTO;
 using YooVisitUserAPI.Dtos;
+using YooVisitUserAPI.Models;
 
-namespace YooVisit.UserService.Services;
+namespace YooVisitUserAPI.Services;
 
 public interface IUserService
 {
     // Contrat pour récupérer un utilisateur par son email.
     // Renvoie une Tâche (Task) qui contiendra un User ou null.
-    Task<User> GetUserByEmailAsync(string email);
+    Task<UserApplication> GetUserByEmailAsync(string email);
 
     // Contrat pour récupérer un utilisateur par son ID.
     Task<UserDto> GetUserByIdAsync(Guid id);
