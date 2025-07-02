@@ -1,60 +1,51 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using YooVisitUserAPI.Data;
+using YooVisitUserAPI.Interfaces;
+
+// Ajoute les using pour tes services
+using YooVisitUserAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. On récupère la chaîne de connexion depuis appsettings.json
+// --- Configuration des services ---
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// 2. On enregistre le DbContext dans le système d'injection de dépendances.
-//    On lui dit d'utiliser le pilote PostgreSQL (UseNpgsql) avec la chaîne de connexion.
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseNpgsql(connectionString));
+
+// --- AJOUTE CES DEUX LIGNES ICI ---
+// Recette pour le service utilisateur
+builder.Services.AddScoped<IUserService, UserService>();
+// Recette pour le service de token
+builder.Services.AddScoped<ITokenService, TokenService>();
+// ------------------------------------
+
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+// --- Le reste de ton fichier ne change pas ---
+if (app.Environment.IsDevelopment())
 {
-    var services = scope.ServiceProvider;
-    var logger = services.GetRequiredService<ILogger<Program>>();
-    logger.LogInformation("Lancement de la migration et du seeding de la base de données...");
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
     try
     {
-        // 1. Récupère le contexte de la base de données
-        // REMPLACE "YooVisitUserDbContext" par le VRAI NOM de ta classe DbContext
-        var context = services.GetRequiredService<UserDbContext>();
-
-        // 2. Applique les migrations en attente.
-        // C'est cette ligne qui va créer la table "Users" !
-        context.Database.Migrate();
-
-        // 3. Lance ton seeder SEULEMENT APRÈS que les migrations soient passées
-        // La ligne 23 de ton Program.cs qui appelle le seeder doit être déplacée ici.
-        DataSeeder.Seed(services);
-
-        logger.LogInformation("Migration et seeding terminés avec succès.");
+        await DataSeeder.SeedAsync(app.Services);
     }
     catch (Exception ex)
     {
-        // Si ça plante, on log l'erreur pour comprendre pourquoi
-        logger.LogError(ex, "Une erreur est survenue lors de la migration ou du seeding.");
+        var logger = app.Services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Une erreur est survenue pendant le seeding de la BDD.");
     }
 }
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
-app.UseHttpsRedirection();
-
+// app.UseHttpsRedirection();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

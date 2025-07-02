@@ -6,9 +6,10 @@ services:
     container_name: yoovisit-api
     restart: on-failure
     ports:
-      - "8080:8080" # Mappe le port 8080 de ta machine au port 8080 de l'API
+      - "8180:8180" # Mappe le port 8180 de ta machine au port 8180 de l'API
     environment:
-      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8180
       - ConnectionStrings__DefaultConnection=Host=postgres-db;Port=5432;Database=YooVisit_Users;Username=yoovisit;Password=MonMotDePasseSuperSecurise!123
     depends_on:
       - postgres-db

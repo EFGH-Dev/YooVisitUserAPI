@@ -1,40 +1,53 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using YooVisitUserAPI.Data;
 using YooVisitUserAPI.Models;
+using BCrypt.Net;
+using Microsoft.Extensions.Logging;
+
+namespace YooVisitUserAPI.Data;
 
 public static class DataSeeder
 {
-    public static void Seed(IServiceProvider serviceProvider)
+    public static async Task SeedAsync(IServiceProvider serviceProvider)
     {
-        // On utilise le service provider pour obtenir une instance du DbContext
-        using (var context = serviceProvider.GetRequiredService<UserDbContext>())
+        using (var scope = serviceProvider.CreateScope())
         {
-            // On ne fait rien si la table Users contient déjà des données
-            if (context.Users.Any())
+            var context = scope.ServiceProvider.GetRequiredService<UserDbContext>();
+            // On logue avec le contexte de Program, car DataSeeder est static
+            var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
+            await context.Database.MigrateAsync();
+
+            if (await context.Users.AnyAsync())
             {
+                logger.LogInformation("La base de données contient déjà des utilisateurs. Pas de seeding nécessaire.");
                 return;
             }
 
+            logger.LogInformation("Base de données vide. Démarrage du seeding...");
+
             var users = new UserApplication[]
             {
-            new UserApplication
-            {
-                IdUtilisateur = Guid.Parse("d8d7b3b0-2b9a-4f9a-8b9a-7b3b0e6b7a5c"),
-                Email = "agent.47@ica.org",
-                HashedPassword = "$2a$11$It0jRa8NXUEAIXtMnqZnB.Bs.jhxNATOTkr2swqEkIOuNocJ/xllC",
-                DateInscription = new DateTime(2025, 6, 27, 0, 0, 0, DateTimeKind.Utc)
-            },
-            new UserApplication
-            {
-                IdUtilisateur = Guid.Parse("c2a7d5a5-6b3a-4f8e-a9d8-7b3b0e6b7a5c"),
-                Email = "commander.shepard@normandy.sr2",
-                HashedPassword = "$2a$11$aTibKgO3RMmsmzlKgL.XwOA25iTYsS9BX6b407GUguTtRVzBA0c7O",
-                DateInscription = new DateTime(2025, 6, 27, 0, 0, 0, DateTimeKind.Utc)
-            }
+                new UserApplication
+                {
+                    IdUtilisateur = Guid.NewGuid(),
+                    Email = "fabrice.guthier@gmail.com",
+                    // On utilise la version simple maintenant que le bug de l'IDE est résolu
+                    HashedPassword = global::BCrypt.Net.BCrypt.HashPassword("MdpFabrice123!"),
+                    DateInscription = DateTime.UtcNow
+                },
+                new UserApplication
+                {
+                    IdUtilisateur = Guid.NewGuid(),
+                    Email = "guthier.emilie@gmail.com",
+                    HashedPassword = global::BCrypt.Net.BCrypt.HashPassword("MdpEmilie123!"),
+                    DateInscription = DateTime.UtcNow
+                }
             };
 
-            context.Users.AddRange(users);
-            context.SaveChanges();
+            await context.Users.AddRangeAsync(users);
+            await context.SaveChangesAsync();
+
+            logger.LogInformation("Seeding terminé. Deux utilisateurs de test ont été créés.");
         }
     }
 }

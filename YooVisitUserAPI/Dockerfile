@@ -3,8 +3,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
 # Expose les ports pour HTTP et HTTPS. Change-les si ton app écoute sur d'autres ports.
-EXPOSE 8080
-EXPOSE 8081
+EXPOSE 8180
+EXPOSE 8181
 
 # --- Étape 2: L'atelier de construction ---
 # On utilise l'image du SDK .NET 9 complet, qui contient tous les outils pour construire le projet.

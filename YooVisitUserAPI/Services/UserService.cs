@@ -3,16 +3,21 @@ using YooVisitUserAPI.Data;
 using YooVisitUserAPI.DTO;
 using YooVisitUserAPI.Dtos;
 using YooVisitUserAPI.Models;
+using YooVisitUserAPI.Services; // Assure-toi que le namespace de IUserService est bien importé
 
 namespace YooVisitUserAPI.Services;
 
-// Cette classe est la "réalisation" du contrat défini par IUserService.
+// --- LA MODIFICATION EST ICI ---
+// On déclare que cette classe implémente l'interface IUserService.
 public class UserService : IUserService
 {
     private readonly UserDbContext _context; // On demande une instance du DbContext.
 
-    public UserService(UserDbContext context) { _context = context; }
     // Le DbContext est "injecté" par le système de dépendances de .NET.
+    public UserService(UserDbContext context)
+    {
+        _context = context;
+    }
 
     public async Task<UserDto> CreateUserAsync(RegisterUserDto userDto, string hashedPassword)
     {
@@ -26,7 +31,6 @@ public class UserService : IUserService
         };
 
         // 2. On ajoute ce nouvel utilisateur au "contexte" d'EF Core.
-        // À ce stade, rien n'est encore dans la base de données.
         _context.Users.Add(user);
 
         // 3. On sauvegarde les changements. C'est CETTE ligne qui exécute la requête SQL "INSERT".
@@ -44,7 +48,8 @@ public class UserService : IUserService
 
     public async Task<UserApplication?> GetUserByEmailAsync(string email)
     {
-        // Le type de retour de la méthode doit être mis à jour
+        // On retourne bien un UserApplication? car le controller a besoin du HashedPassword
+        // pour la vérification, qui n'existe pas dans UserDto.
         return await _context.Users
             .FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
     }
