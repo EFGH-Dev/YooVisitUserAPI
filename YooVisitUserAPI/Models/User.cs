@@ -1,11 +1,10 @@
-﻿namespace YooVisitUserAPI.Models
+﻿namespace YooVisitUserAPI.Models;
+
+public class User
 {
-    public class User
-    {
-        public Guid IdUtilisateur { get; set; }
-        public string Nom { get; set; }
-        public string Email { get; set; }
-        public string HashedPassword { get; set; } // Le mot de passe HACHÉ
-        public DateTime DateInscription { get; set; }
-    }
+    public Guid IdUtilisateur { get; set; }
+    public string Email { get; set; }
+    public string HashedPassword { get; set; } // Le mot de passe HACHÉ
+    public DateTime DateInscription { get; set; }
 }
+
