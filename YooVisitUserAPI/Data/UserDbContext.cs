@@ -14,9 +14,11 @@ public class UserDbContext : DbContext
     // Chaque DbSet<T> représente une table dans ta base de données.
     // Ici, on déclare une table "Users" qui contiendra des objets de type "User".
     public DbSet<UserApplication> Users { get; set; }
+    public DbSet<Photo> Photos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Photo>().ToTable("Photos", t => t.ExcludeFromMigrations());
     }
 }
