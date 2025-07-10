@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using YooVisitUserAPI.Data;
 using YooVisitUserAPI.DTO;
 using YooVisitUserAPI.Dtos;
 using YooVisitUserAPI.Interfaces;
@@ -16,9 +18,11 @@ public class UsersController : ControllerBase
     // C'est le principe d'Inversion de Dépendance (le 'D' de SOLID)
     private readonly IUserService _userService;
     private readonly ITokenService _tokenService;
+    private readonly UserDbContext _context;
 
-    public UsersController(IUserService userService, ITokenService tokenService)
+    public UsersController(UserDbContext context, IUserService userService, ITokenService tokenService)
     {
+        _context = context;
         _userService = userService;
         _tokenService = tokenService;
     }
@@ -101,5 +105,34 @@ public class UsersController : ControllerBase
 
         var user = await _userService.GetUserByIdAsync(Guid.Parse(userId));
         return Ok(user);
+    }
+
+    [Authorize] // Seul le joueur connecté peut voir ses propres stats
+    [HttpGet("my-stats")]
+    public async Task<ActionResult<PlayerStatsDto>> GetMyStats()
+    {
+        var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+        var user = await _context.Users.FindAsync(userId);
+
+        if (user == null)
+        {
+            return NotFound("Utilisateur non trouvé.");
+        }
+
+        var totalPhotosInWorld = await _context.Photos.CountAsync();
+        var userPhotosCount = await _context.Photos.CountAsync(p => p.UserId == userId);
+
+        double progress = (totalPhotosInWorld > 0) ? (double)userPhotosCount / totalPhotosInWorld : 0;
+
+        var stats = new PlayerStatsDto
+        {
+            UserName = user.Email.Split('@').First(),
+            Experience = user.Experience,
+            ExplorationProgress = progress,
+            AccessPoints = userPhotosCount // Pour l'instant, 1 photo = 1 point d'accès
+        };
+
+        return Ok(stats);
     }
 }

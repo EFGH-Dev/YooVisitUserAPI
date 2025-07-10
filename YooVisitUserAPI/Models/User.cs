@@ -1,10 +1,16 @@
-﻿namespace YooVisitUserAPI.Models;
+﻿using System.ComponentModel.DataAnnotations; // <-- AJOUTER CE USING !
 
-public class User
+namespace YooVisitUserAPI.Models;
+
+public class UserApplication
 {
+    [Key]
     public Guid IdUtilisateur { get; set; }
-    public string Email { get; set; }
-    public string HashedPassword { get; set; } // Le mot de passe HACHÉ
-    public DateTime DateInscription { get; set; }
-}
 
+    public string Email { get; set; }
+
+    public string HashedPassword { get; set; }
+
+    public DateTime DateInscription { get; set; }
+    public int Experience { get; set; } = 0;
+}
