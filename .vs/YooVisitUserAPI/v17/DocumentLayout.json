@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\dtos\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\dtos\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\dtos\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\dtos\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,13 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UpdateProfileDto.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
-              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
-              "RelativeToolTip": "YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs*",
+              "RelativeToolTip": "YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-16T08:59:13.978Z",
               "EditorCaption": ""
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Models\\User.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Models\\User.cs",
@@ -136,9 +136,9 @@
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "YooVisitUserAPI\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAowHMAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Controllers\\UsersController.cs*",
+              "RelativeToolTip": "YooVisitUserAPI\\Controllers\\UsersController.cs*",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAIwJ0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-02T12:29:23.911Z",
               "EditorCaption": ""

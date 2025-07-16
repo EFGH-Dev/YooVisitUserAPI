@@ -127,7 +127,7 @@ public class UsersController : ControllerBase
 
         var stats = new PlayerStatsDto
         {
-            UserName = user.Email.Split('@').First(),
+            UserName = user.Nom ?? user.Email.Split('@').First(),
             Experience = user.Experience,
             ExplorationProgress = progress,
             AccessPoints = userPhotosCount // Pour l'instant, 1 photo = 1 point d'accès

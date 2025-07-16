@@ -12,7 +12,7 @@ using YooVisitUserAPI.Data;
 namespace YooVisitUserAPI.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20250716090235_AjoutModificationProfil")]
+    [Migration("20250716093511_AjoutModificationProfil")]
     partial class AjoutModificationProfil
     {
         /// <inheritdoc />
