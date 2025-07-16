@@ -33,14 +33,20 @@ public static class DataSeeder
                     Email = "fabrice.guthier@gmail.com",
                     // On utilise la version simple maintenant que le bug de l'IDE est résolu
                     HashedPassword = global::BCrypt.Net.BCrypt.HashPassword("MdpFabrice123!"),
-                    DateInscription = DateTime.UtcNow
+                    DateInscription = DateTime.UtcNow,
+                    Experience = 0,
+                    Nom = "Fab",
+                    Biographie = ""
                 },
                 new UserApplication
                 {
                     IdUtilisateur = Guid.NewGuid(),
                     Email = "guthier.emilie@gmail.com",
                     HashedPassword = global::BCrypt.Net.BCrypt.HashPassword("MdpEmilie123!"),
-                    DateInscription = DateTime.UtcNow
+                    DateInscription = DateTime.UtcNow,
+                    Experience = 0,
+                    Nom = "Emilie",
+                    Biographie = ""
                 }
             };
 

@@ -1,14 +1,14 @@
-﻿namespace YooVisitUserAPI.Dtos
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace YooVisitUserAPI.Dtos
 {
     public class UserDto
     {
         public Guid IdUtilisateur { get; set; }
-
-        public string Email { get; set; }
-
-        public string HashedPassword { get; set; }
-
+        public string Email { get; set; } = string.Empty;
+        public string? Nom { get; set; }
+        public string? Biographie { get; set; }
+        public int Experience { get; set; }
         public DateTime DateInscription { get; set; }
-        public int Experience { get; set; } = 0;
     }
 }

@@ -14,8 +14,6 @@ namespace YooVisitUserAPI.Controllers;
 [Route("api/[controller]")] // L'URL de base sera /api/users
 public class UsersController : ControllerBase
 {
-    // On injectera nos services (ex: pour parler à la BDD, générer le token)
-    // C'est le principe d'Inversion de Dépendance (le 'D' de SOLID)
     private readonly IUserService _userService;
     private readonly ITokenService _tokenService;
     private readonly UserDbContext _context;
@@ -23,7 +21,7 @@ public class UsersController : ControllerBase
     public UsersController(UserDbContext context, IUserService userService, ITokenService tokenService)
     {
         _context = context;
-        _userService = userService;
+        _userService = userService; // On assigne le service
         _tokenService = tokenService;
     }
 
@@ -55,30 +53,30 @@ public class UsersController : ControllerBase
     [HttpPost("login")]
     public async Task<ActionResult<LoginResponseDto>> Login([FromBody] LoginRequestDto loginDto)
     {
-        // 1. Récupérer l'utilisateur par email
-        var user = await _userService.GetUserByEmailAsync(loginDto.Email);
-        if (user == null)
-        {
-            // On renvoie une erreur 401 Unauthorized. Message générique pour la sécurité.
-            return Unauthorized("Email ou mot de passe invalide.");
-        }
-
-        // 2. Vérifier le mot de passe haché
-        bool isPasswordValid = BCrypt.Net.BCrypt.Verify(loginDto.Password, user.HashedPassword);
-        if (!isPasswordValid)
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
+        if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.HashedPassword))
         {
             return Unauthorized("Email ou mot de passe invalide.");
         }
 
-        // 3. Si tout est bon, on génère le token JWT
         (string token, DateTime expiration) = _tokenService.GenerateJwtToken(user);
+        
+        // On "map" manuellement l'entité UserApplication vers le UserDto sécurisé
+        var userDto = new UserDto
+        {
+            IdUtilisateur = user.IdUtilisateur,
+            Email = user.Email,
+            Nom = user.Nom,
+            Biographie = user.Biographie,
+            Experience = user.Experience,
+            DateInscription = user.DateInscription
+        };
 
-        // 4. On renvoie le token et les infos de l'user
         return Ok(new LoginResponseDto
         {
             Token = token,
             Expiration = expiration,
-            User = new UserDto { /* mapper les champs de l'user vers le DTO */ }
+            User = userDto // On renvoie le DTO sécurisé
         });
     }
 
@@ -92,27 +90,36 @@ public class UsersController : ControllerBase
     }
 
     // GET /api/users/me (Exemple d'endpoint protégé)
+    [Authorize]
     [HttpGet("me")]
-    [Authorize] // <-- MAGIE ! Seuls les utilisateurs avec un token valide peuvent accéder ici.
     public async Task<ActionResult<UserDto>> GetMyProfile()
     {
-        // ASP.NET Core nous donne accès à l'identité de l'appelant.
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId == null)
+        var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var user = await _context.Users.FindAsync(userId);
+
+        if (user == null)
         {
-            return Unauthorized();
+            return NotFound();
         }
 
-        var user = await _userService.GetUserByIdAsync(Guid.Parse(userId));
-        return Ok(user);
+        // On crée manuellement le DTO pour être sûr d'inclure les bons champs
+        var userDto = new UserDto
+        {
+            IdUtilisateur = user.IdUtilisateur,
+            Email = user.Email,
+            DateInscription = user.DateInscription,
+            Nom = user.Nom, // On inclut le nom personnalisé
+            Biographie = user.Biographie // On inclut la biographie
+        };
+
+        return Ok(userDto);
     }
 
-    [Authorize] // Seul le joueur connecté peut voir ses propres stats
+    [Authorize]
     [HttpGet("my-stats")]
     public async Task<ActionResult<PlayerStatsDto>> GetMyStats()
     {
         var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
         var user = await _context.Users.FindAsync(userId);
 
         if (user == null)
@@ -127,10 +134,11 @@ public class UsersController : ControllerBase
 
         var stats = new PlayerStatsDto
         {
+            // On utilise le Nom en priorité, sinon la partie de l'email
             UserName = user.Nom ?? user.Email.Split('@').First(),
             Experience = user.Experience,
             ExplorationProgress = progress,
-            AccessPoints = userPhotosCount // Pour l'instant, 1 photo = 1 point d'accès
+            AccessPoints = userPhotosCount
         };
 
         return Ok(stats);
@@ -148,9 +156,18 @@ public class UsersController : ControllerBase
             return NotFound("Utilisateur non trouvé.");
         }
 
-        // On met à jour les propriétés
-        user.Nom = updateDto.Nom;
-        user.Biographie = updateDto.Biographie;
+        // On met à jour les propriétés SEULEMENT si elles sont fournies dans la requête.
+        // Si la chaîne n'est pas nulle, on met à jour. Cela permet de passer une chaîne vide pour effacer le nom.
+        if (updateDto.Nom != null)
+        {
+            user.Nom = updateDto.Nom;
+        }
+
+        // On fait de même pour la biographie.
+        if (updateDto.Biographie != null)
+        {
+            user.Biographie = updateDto.Biographie;
+        }
 
         // On sauvegarde les changements dans la base de données
         await _context.SaveChangesAsync();

@@ -4,7 +4,6 @@ namespace YooVisitUserAPI.Dtos
 {
     public class UpdateProfileDto
     {
-        [Required]
         [StringLength(50, MinimumLength = 3)]
         public string Nom { get; set; } = string.Empty;
 

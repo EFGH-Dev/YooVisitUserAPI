@@ -12,8 +12,8 @@ using YooVisitUserAPI.Data;
 namespace YooVisitUserAPI.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20250716093511_AjoutModificationProfil")]
-    partial class AjoutModificationProfil
+    [Migration("20250716190003_ModificatioLogiqueUserName")]
+    partial class ModificatioLogiqueUserName
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,6 +87,7 @@ namespace YooVisitUserAPI.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Nom")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 

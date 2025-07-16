@@ -84,6 +84,7 @@ namespace YooVisitUserAPI.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Nom")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 

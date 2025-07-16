@@ -24,10 +24,11 @@ public class UserService : IUserService
         // 1. On crée une nouvelle instance de notre entité User.
         var user = new UserApplication
         {
-            IdUtilisateur = Guid.NewGuid(), // On génère un nouvel identifiant unique.
+            IdUtilisateur = Guid.NewGuid(),
             Email = userDto.Email,
             HashedPassword = hashedPassword,
-            DateInscription = DateTime.UtcNow // On utilise l'heure UTC pour la cohérence serveur.
+            DateInscription = DateTime.UtcNow,
+            Nom = userDto.Nom // On assigne le pseudo fourni
         };
 
         // 2. On ajoute ce nouvel utilisateur au "contexte" d'EF Core.
@@ -42,7 +43,8 @@ public class UserService : IUserService
         {
             IdUtilisateur = user.IdUtilisateur,
             Email = user.Email,
-            DateInscription = user.DateInscription
+            DateInscription = user.DateInscription,
+            Nom = user.Nom
         };
     }
 
@@ -67,7 +69,8 @@ public class UserService : IUserService
         {
             IdUtilisateur = user.IdUtilisateur,
             Email = user.Email,
-            DateInscription = user.DateInscription
+            DateInscription = user.DateInscription,
+            Nom = user.Nom,
         };
     }
 }
