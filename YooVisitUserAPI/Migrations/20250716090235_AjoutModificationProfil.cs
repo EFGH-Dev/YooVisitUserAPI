@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace YooVisitUserAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialUserSchema : Migration
+    public partial class AjoutModificationProfil : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,9 @@ namespace YooVisitUserAPI.Migrations
                     Email = table.Column<string>(type: "text", nullable: false),
                     HashedPassword = table.Column<string>(type: "text", nullable: false),
                     DateInscription = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Experience = table.Column<int>(type: "integer", nullable: false)
+                    Experience = table.Column<int>(type: "integer", nullable: false),
+                    Nom = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    Biographie = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
                 {

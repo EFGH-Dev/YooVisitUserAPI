@@ -135,4 +135,26 @@ public class UsersController : ControllerBase
 
         return Ok(stats);
     }
+
+    [Authorize]
+    [HttpPut("me")] // On utilise PUT pour la mise à jour d'une ressource existante
+    public async Task<IActionResult> UpdateMyProfile([FromBody] UpdateProfileDto updateDto)
+    {
+        var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var user = await _context.Users.FindAsync(userId);
+
+        if (user == null)
+        {
+            return NotFound("Utilisateur non trouvé.");
+        }
+
+        // On met à jour les propriétés
+        user.Nom = updateDto.Nom;
+        user.Biographie = updateDto.Biographie;
+
+        // On sauvegarde les changements dans la base de données
+        await _context.SaveChangesAsync();
+
+        return NoContent(); // 204 NoContent est une réponse standard pour un update réussi
+    }
 }

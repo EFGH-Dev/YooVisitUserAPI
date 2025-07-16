@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\DEV\\APIs\\YooVisitUserAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\dtos\\playerstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\dtos\\playerstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\dtos\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\dtos\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\models\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\models\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\data\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,6 +21,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\dtos\\playerstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\dtos\\playerstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\models\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|solutionrelative:yoovisituserapi\\models\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1BB8261E-C5A3-49E6-9590-726DE9488704}|YooVisitUserAPI\\YooVisitUserAPI.csproj|c:\\dev\\apis\\yoovisituserapi\\yoovisituserapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -58,41 +62,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UserDto.cs",
-              "RelativeDocumentMoniker": "YooVisitUserAPI\\Dtos\\UserDto.cs",
-              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UserDto.cs",
-              "RelativeToolTip": "YooVisitUserAPI\\Dtos\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T18:13:03.216Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Photo.cs",
-              "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Models\\Photo.cs",
-              "RelativeDocumentMoniker": "YooVisitUserAPI\\Models\\Photo.cs",
-              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Models\\Photo.cs",
-              "RelativeToolTip": "YooVisitUserAPI\\Models\\Photo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UpdateProfileDto.cs",
+              "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
+              "RelativeDocumentMoniker": "YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
+              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
+              "RelativeToolTip": "YooVisitUserAPI\\Dtos\\UpdateProfileDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T12:37:32.104Z",
+              "WhenOpened": "2025-07-16T08:59:13.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "UserDbContext.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Data\\UserDbContext.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Data\\UserDbContext.cs",
@@ -100,21 +91,19 @@
               "RelativeToolTip": "YooVisitUserAPI\\Data\\UserDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T12:13:07.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T12:13:07.902Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "PlayerStatsDto.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\PlayerStatsDto.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Dtos\\PlayerStatsDto.cs",
               "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\PlayerStatsDto.cs",
               "RelativeToolTip": "YooVisitUserAPI\\Dtos\\PlayerStatsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T12:08:23.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T12:08:23.65Z"
             },
             {
               "$type": "Document",
@@ -124,14 +113,14 @@
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Models\\User.cs",
               "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Models\\User.cs",
               "RelativeToolTip": "YooVisitUserAPI\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T12:07:43.148Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\appsettings.json",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\appsettings.json",
@@ -143,20 +132,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Controllers\\UsersController.cs",
               "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Controllers\\UsersController.cs",
               "RelativeToolTip": "YooVisitUserAPI\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAwwBYAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAowHMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-02T12:29:23.911Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Program.cs",
+              "RelativeDocumentMoniker": "YooVisitUserAPI\\Program.cs",
+              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Program.cs",
+              "RelativeToolTip": "YooVisitUserAPI\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T14:10:49.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DataSeeder.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Data\\DataSeeder.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Data\\DataSeeder.cs",
@@ -164,11 +165,36 @@
               "RelativeToolTip": "YooVisitUserAPI\\Data\\DataSeeder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T12:25:18.204Z"
+              "WhenOpened": "2025-07-02T12:25:18.204Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
+              "Title": "Photo.cs",
+              "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Models\\Photo.cs",
+              "RelativeDocumentMoniker": "YooVisitUserAPI\\Models\\Photo.cs",
+              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Models\\Photo.cs",
+              "RelativeToolTip": "YooVisitUserAPI\\Models\\Photo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T12:37:32.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "YooVisitUserAPI\\Dtos\\UserDto.cs",
+              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Dtos\\UserDto.cs",
+              "RelativeToolTip": "YooVisitUserAPI\\Dtos\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T18:13:03.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Services\\UserService.cs",
@@ -180,19 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Program.cs",
-              "RelativeDocumentMoniker": "YooVisitUserAPI\\Program.cs",
-              "ToolTip": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Program.cs",
-              "RelativeToolTip": "YooVisitUserAPI\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T14:10:49.291Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Services\\TokenService.cs",
@@ -204,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\DEV\\APIs\\YooVisitUserAPI\\YooVisitUserAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "YooVisitUserAPI\\Properties\\launchSettings.json",

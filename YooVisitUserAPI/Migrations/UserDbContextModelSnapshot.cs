@@ -65,6 +65,10 @@ namespace YooVisitUserAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Biographie")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
                     b.Property<DateTime>("DateInscription")
                         .HasColumnType("timestamp with time zone");
 
@@ -78,6 +82,10 @@ namespace YooVisitUserAPI.Migrations
                     b.Property<string>("HashedPassword")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<string>("Nom")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("IdUtilisateur");
 
